@@ -7,7 +7,13 @@
 
 但不一定要賦值:
 ```kotlin=
-val x:int;  //代表x尚未賦值
+val x:int;      //代表x尚未賦值
+```
+
+也可設為null:
+```kotlin=
+var x:int? =2;  //x=2
+x=null;         //由於x可為Null,此行不會出錯
 ```
 
 When
@@ -22,6 +28,21 @@ when (x) {
     else -> print("otherwise")              //其他
 }
 ```
+
+迴圈跳轉
+-
+設立標籤-->標籤名稱@
+```kotlin=
+firstloop@ for (i in 1..100) {
+    println(i)
+    for (j in i..100) {
+        if (j==5) break@firstloop
+        else println(j)
+    }
+    println(i)
+}
+```
+則break會直接跳離外層的loop，而不是只跳離內層的loop
 
 函式宣告
 -
